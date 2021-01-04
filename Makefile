@@ -52,6 +52,7 @@ smartset_fsedge = smartset_fsedge
 smartset_rgb = smartset_rgb
 smartset_adv2 = smartset_adv2
 smartset_savant_elite = smartset_savant_elite
+smartset_master = smartset_master
 
 
 #### Rules
@@ -68,6 +69,9 @@ $(smartset_adv2): $(creosource) $(eccontrols) $(installpkg) $(richmemopackage) $
 $(smartset_savant_elite): $(bgracontrols) $(richmemopackage) $(uecontrols)
 	$(lazbuild) SmartSetSavantElite/SE2ConfigAppWin.lpi
 
+$(smartset_master): $(mbcolorliblaz) $(gifviewer) $(eccontrols) $(uecontrols) $(richmemopackage) $(bgracontrols) $(creosource) $(installpkg)
+	$(lazbuild) SmartSetMaster/SmartSetMaster.lpi
+
 $(uecontrols): $(bgrabitmappack)
 	$(lazbuild) Components/ueControls_v6.0/uecontrols.lpk
 
@@ -83,7 +87,7 @@ $(bgracontrols): $(bgrabitmappack)
 $(bgrabitmappack):
 	$(lazbuild) Components/bgrabitmap-master/bgrabitmap/bgrabitmappack.lpk
 
-$(mbcolorliblaz):
+$(mbcolorliblaz): $(bgrabitmappack)
 	$(lazbuild) Components/mbColorLib-2.2.1/mbColorLib/mbcolorliblaz.lpk
 
 $(creosource) : $(bgrabitmappack) $(bgracontrols)

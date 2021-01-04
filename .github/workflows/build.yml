@@ -86,6 +86,13 @@ jobs:
       #   $00000001005CADB6
       #   $000000010001B0E5
 
+      - name: make smartset_master
+        uses: nick-invision/retry@v1
+        with:
+          max_attempts: 3
+          timeout_minutes: 10
+          command: make smartset_master
+
       # - name: make smartset_adv2
       #   uses: nick-invision/retry@v1
       #   with:
@@ -133,3 +140,8 @@ jobs:
         with:
           name: SmartSetSavantElite-${{ runner.os }}
           path: SmartSetSavantElite
+
+      - uses: actions/upload-artifact@v1
+        with:
+          name: SmartSetMaster-${{ runner.os }}
+          path: SmartSetMaster
