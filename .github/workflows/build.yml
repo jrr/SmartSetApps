@@ -86,26 +86,26 @@ jobs:
       #   $00000001005CADB6
       #   $000000010001B0E5
 
-      - name: make smartset_adv2
-        uses: nick-invision/retry@v1
-        with:
-          max_attempts: 3
-          timeout_minutes: 10
-          command: make smartset_adv2
+      # - name: make smartset_adv2
+      #   uses: nick-invision/retry@v1
+      #   with:
+      #     max_attempts: 3
+      #     timeout_minutes: 10
+      #     command: make smartset_adv2
 
-      - name: make smartset_fsedge
-        uses: nick-invision/retry@v1
-        with:
-          max_attempts: 3
-          timeout_minutes: 10
-          command: make smartset_fsedge
+      # - name: make smartset_fsedge
+      #   uses: nick-invision/retry@v1
+      #   with:
+      #     max_attempts: 3
+      #     timeout_minutes: 10
+      #     command: make smartset_fsedge
 
-      - name: make smartset_rgb
-        uses: nick-invision/retry@v1
-        with:
-          max_attempts: 3
-          timeout_minutes: 10
-          command: make smartset_rgb
+      # - name: make smartset_rgb
+      #   uses: nick-invision/retry@v1
+      #   with:
+      #     max_attempts: 3
+      #     timeout_minutes: 10
+      #     command: make smartset_rgb
 
       - name: make smartset_savant_elite
         uses: nick-invision/retry@v1
@@ -114,20 +114,20 @@ jobs:
           timeout_minutes: 10
           command: make smartset_savant_elite
 
-      - uses: actions/upload-artifact@v1
-        with:
-          name: SmartSetFSEdgePro-${{ runner.os }}
-          path: SmartSetFSEdgePro
+      # - uses: actions/upload-artifact@v1
+      #   with:
+      #     name: SmartSetFSEdgePro-${{ runner.os }}
+      #     path: SmartSetFSEdgePro
 
-      - uses: actions/upload-artifact@v1
-        with:
-          name: SmartSetRGB-${{ runner.os }}
-          path: SmartSetRGB
+      # - uses: actions/upload-artifact@v1
+      #   with:
+      #     name: SmartSetRGB-${{ runner.os }}
+      #     path: SmartSetRGB
 
-      - uses: actions/upload-artifact@v1
-        with:
-          name: SmartSetAdv2-${{ runner.os }}
-          path: SmartSetAdv2
+      # - uses: actions/upload-artifact@v1
+      #   with:
+      #     name: SmartSetAdv2-${{ runner.os }}
+      #     path: SmartSetAdv2
 
       - uses: actions/upload-artifact@v1
         with:
