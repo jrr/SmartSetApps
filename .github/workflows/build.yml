@@ -121,6 +121,13 @@ jobs:
           timeout_minutes: 10
           command: make smartset_savant_elite
 
+      - name: make smartset_tko
+        uses: nick-invision/retry@v1
+        with:
+          max_attempts: 3
+          timeout_minutes: 10
+          command: make smartset_tko
+
       # - uses: actions/upload-artifact@v1
       #   with:
       #     name: SmartSetFSEdgePro-${{ runner.os }}

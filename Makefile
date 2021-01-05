@@ -53,6 +53,7 @@ smartset_rgb = smartset_rgb
 smartset_adv2 = smartset_adv2
 smartset_savant_elite = smartset_savant_elite
 smartset_master = smartset_master
+smartset_tko = smartset_tko
 
 
 #### Rules
@@ -71,6 +72,9 @@ $(smartset_savant_elite): $(bgracontrols) $(richmemopackage) $(uecontrols)
 
 $(smartset_master): $(mbcolorliblaz) $(gifviewer) $(eccontrols) $(uecontrols) $(richmemopackage) $(bgracontrols) $(creosource) $(installpkg)
 	$(lazbuild) SmartSetMaster/SmartSetMaster.lpi
+
+$(smartset_tko): $(installpkg) $(creosource) $(richmemopackage) $(gifviewer) $(mbcolorliblaz) $(eccontrols) $(uecontrols)
+	$(lazbuild) SmartSetTKO/SmartSetTKO.lpi
 
 $(uecontrols): $(bgrabitmappack)
 	$(lazbuild) Components/ueControls_v6.0/uecontrols.lpk
