@@ -126,6 +126,19 @@ type
 
   {$endif}
 
+  {$ifdef Linux}
+  function EjectUSB(const DriveLetter: string): boolean;
+  begin
+    result := false;
+  end;
+
+  function EjectVolume(ADrive: char): boolean;
+  begin
+    result := false;
+  end;
+
+  {$endif}
+
   {$ifdef Win32}
   function EjectUSB(const DriveLetter: string): boolean;
   const
