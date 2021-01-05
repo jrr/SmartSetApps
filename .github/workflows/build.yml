@@ -107,12 +107,12 @@ jobs:
       #     timeout_minutes: 10
       #     command: make smartset_fsedge
 
-      # - name: make smartset_rgb
-      #   uses: nick-invision/retry@v1
-      #   with:
-      #     max_attempts: 3
-      #     timeout_minutes: 10
-      #     command: make smartset_rgb
+      - name: make smartset_rgb
+        uses: nick-invision/retry@v1
+        with:
+          max_attempts: 3
+          timeout_minutes: 10
+          command: make smartset_rgb
 
       - name: make smartset_savant_elite
         uses: nick-invision/retry@v1
@@ -126,10 +126,10 @@ jobs:
       #     name: SmartSetFSEdgePro-${{ runner.os }}
       #     path: SmartSetFSEdgePro
 
-      # - uses: actions/upload-artifact@v1
-      #   with:
-      #     name: SmartSetRGB-${{ runner.os }}
-      #     path: SmartSetRGB
+      - uses: actions/upload-artifact@v1
+        with:
+          name: SmartSetRGB-${{ runner.os }}
+          path: SmartSetRGB
 
       # - uses: actions/upload-artifact@v1
       #   with:
