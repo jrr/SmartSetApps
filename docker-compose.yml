@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  dockerized-build:
+    image: laz-build
+    volumes:
+      - type: bind
+        source: ./
+        target: /app

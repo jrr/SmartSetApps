@@ -101,3 +101,13 @@ $(installpkg):
 
 clean:
 	rm -rf Components/richmemo/lib/* Components/ecc_0-9-6-10_16-06-15/EC_Controls/lib/* Components/mbColorLib-2.2.1/mbColorLib/lib/* Components/TGIFViewer-master/TGIFViewer-master/package/lib/* Components/TGIFViewer-master/TGIFViewer-master/demos/GifRes/lib/* Components/TGIFViewer-master/TGIFViewer-master/demos/GifView/lib/* Components/mbColorLib-2.2.1/mbColorLib/examples/fulldemo/lib/* Components/CreoSource/lib/* Components/HSButton0.9/HSButton/lib/* Components/bgrabitmap-master/bgrabitmap/lib/* Components/bgracontrols-master/lib/* Components/ueControls_v6.0/lib/*
+
+################################################
+# Dockerized build environment (linux)
+################################################
+
+docker-build:
+	docker build -f Dockerfile -t laz-build .
+
+linux-env:
+	docker-compose run -w /app dockerized-build
