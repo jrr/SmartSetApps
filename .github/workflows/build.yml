@@ -25,9 +25,7 @@ jobs:
       ## Linux Setup
       - name: install lazarus (linux)
         if: matrix.os == 'ubuntu-latest'
-        run: |
-          sudo apt-get update
-          sudo apt-get install lazarus
+        run: sudo make install-lazarus-linux
 
       ## Windows Setup
 
