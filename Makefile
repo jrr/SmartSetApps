@@ -166,3 +166,13 @@ install-lazarus-mac:
 	wget $(DMG_LAZARUS) -q -O lazarus.pkg
 	sudo installer -pkg lazarus.pkg -target /
 
+
+################################################
+# Dockerized build environment (linux)
+################################################
+
+docker-build:
+	docker build -f Dockerfile -t laz-build .
+
+linux-env:
+	docker-compose run -w /app dockerized-build
