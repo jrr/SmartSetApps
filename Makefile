@@ -134,16 +134,16 @@ clean:
 # Compiler Installation
 ################################################
 
-DEB_LAZARUS = "https://sourceforge.net/projects/lazarus/files/Lazarus%20Linux%20amd64%20DEB/Lazarus%202.0.12/lazarus-project_2.0.12-0_amd64.deb/download"
-DEB_FPC_LAZ = "https://sourceforge.net/projects/lazarus/files/Lazarus%20Linux%20amd64%20DEB/Lazarus%202.0.12/fpc-laz_3.2.0-1_amd64.deb/download"
-DEB_FPC_SRC = "https://sourceforge.net/projects/lazarus/files/Lazarus%20Linux%20amd64%20DEB/Lazarus%202.0.12/fpc-src_3.2.0-1_amd64.deb/download"
+#DEB_LAZARUS = "https://sourceforge.net/projects/lazarus/files/Lazarus%20Linux%20amd64%20DEB/Lazarus%202.0.12/lazarus-project_2.0.12-0_amd64.deb/download"
+#DEB_FPC_LAZ = "https://sourceforge.net/projects/lazarus/files/Lazarus%20Linux%20amd64%20DEB/Lazarus%202.0.12/fpc-laz_3.2.0-1_amd64.deb/download"
+#DEB_FPC_SRC = "https://sourceforge.net/projects/lazarus/files/Lazarus%20Linux%20amd64%20DEB/Lazarus%202.0.12/fpc-src_3.2.0-1_amd64.deb/download"
 
 # Lazarus 2.1+ causes build errors related to GTK and richmemo:
 # https://wiki.freepascal.org/RichMemo#2.1.0_.28trunk.2Flater.29
 
-# DEB_LAZARUS = "https://sourceforge.net/projects/lazarus/files/Lazarus%20Linux%20amd64%20DEB/Lazarus%202.2RC2/lazarus-project_2.2.0RC2-0_amd64.deb/download"
-# DEB_FPC_LAZ = "https://sourceforge.net/projects/lazarus/files/Lazarus%20Linux%20amd64%20DEB/Lazarus%202.2RC2/fpc-laz_3.2.2-210709_amd64.deb/download"
-# DEB_FPC_SRC = "https://sourceforge.net/projects/lazarus/files/Lazarus%20Linux%20amd64%20DEB/Lazarus%202.2RC2/fpc-src_3.2.2-210709_amd64.deb/download"
+DEB_LAZARUS = "https://sourceforge.net/projects/lazarus/files/Lazarus%20Linux%20amd64%20DEB/Lazarus%202.2RC2/lazarus-project_2.2.0RC2-0_amd64.deb/download"
+DEB_FPC_LAZ = "https://sourceforge.net/projects/lazarus/files/Lazarus%20Linux%20amd64%20DEB/Lazarus%202.2RC2/fpc-laz_3.2.2-210709_amd64.deb/download"
+DEB_FPC_SRC = "https://sourceforge.net/projects/lazarus/files/Lazarus%20Linux%20amd64%20DEB/Lazarus%202.2RC2/fpc-src_3.2.2-210709_amd64.deb/download"
 
 
 install-lazarus-linux:
