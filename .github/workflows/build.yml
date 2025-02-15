@@ -37,7 +37,7 @@ jobs:
 
       - name: install 32-bit lazarus (windows)
         if: matrix.os == 'windows-latest'
-        run: choco install --x86 lazarus
+        run: choco install --x86 lazarus --version=2.2.0
 
       # https://stackoverflow.com/a/64831469
       - name: add lazarus to path (windows)
