@@ -175,4 +175,4 @@ docker-build:
 	docker build -f Dockerfile -t laz-build . --platform=linux/amd64
 
 linux-env:
-	docker-compose run -w /app dockerized-build
+	docker compose run -w /app dockerized-build
