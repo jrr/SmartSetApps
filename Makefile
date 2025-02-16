@@ -84,6 +84,9 @@ $(uecontrols): $(bgrabitmappack)
 	$(lazbuild) Components/ueControls_v6.0/uecontrols.lpk
 
 $(richmemopackage):
+ifeq ($(UNAME_S),Linux)
+	patch -p1 -N < force_RMLCLTRUNK.patch
+endif
 	$(lazbuild) Components/richmemo/richmemopackage.lpk
 
 $(gifviewer):
