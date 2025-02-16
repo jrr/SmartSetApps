@@ -25,9 +25,7 @@ jobs:
       ## Linux Setup
       - name: install lazarus (linux)
         if: matrix.os == 'ubuntu-latest'
-        run: |
-          sudo apt-get update
-          sudo apt-get install lazarus
+        run: sudo make install-lazarus-linux
 
       ## Windows Setup
 
@@ -37,7 +35,7 @@ jobs:
 
       - name: install 32-bit lazarus (windows)
         if: matrix.os == 'windows-latest'
-        run: choco install --x86 lazarus
+        run: choco install --x86 lazarus --version=2.2.6
 
       # https://stackoverflow.com/a/64831469
       - name: add lazarus to path (windows)
