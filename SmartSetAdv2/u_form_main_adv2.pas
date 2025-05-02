@@ -1343,40 +1343,38 @@ procedure TFormMainAdv2.Maximize;
 var
   aRect: TRect;
 begin
-  aRect := Screen.PrimaryMonitor.WorkareaRect;
+  if (parent <> nil) then
+  begin
+    aRect := Parent.ClientRect;
 
-  if (customWindowState = cwMaximized) then
-  begin
-    self.Height := defaultHeight;
-    self.Width := defaultWidth;
-    self.Left := (aRect.Width - defaultWidth) div 2;
-    self.Top := (aRect.Height - defaultHeight) div 2;
-    customWindowState := cwNormal;
-  end
-  else
-  begin
     self.Left := aRect.Left;
     self.Top := aRect.Top;
     self.Width := aRect.Width;
     self.Height := aRect.Height;
-    customWindowState := cwMaximized;
-  end;
-
-  UpdateStateSettings;
-  {
-  if (Self.WindowState = wsMaximized) then
-  begin
-    Self.WindowState := wsNormal;
-    imageList.GetBitmap(4, btnMaximize.Glyph);
-    btnMaximize.Hint := 'Maximize';
   end
   else
   begin
-    Self.WindowState := wsMaximized;
-    imageList.GetBitmap(5, btnMaximize.Glyph);
-    btnMaximize.Hint := 'Restore window';
+    aRect := Screen.PrimaryMonitor.WorkareaRect;
+
+    if (customWindowState = cwMaximized) then
+    begin
+      self.Height := defaultHeight;
+      self.Width := defaultWidth;
+      self.Left := (aRect.Width - defaultWidth) div 2;
+      self.Top := (aRect.Height - defaultHeight) div 2;
+      customWindowState := cwNormal;
+    end
+    else
+    begin
+      self.Left := aRect.Left;
+      self.Top := aRect.Top;
+      self.Width := aRect.Width;
+      self.Height := aRect.Height;
+      customWindowState := cwMaximized;
+    end;
+
+    UpdateStateSettings;
   end;
-  }
 end;
 
 procedure TFormMainAdv2.UpdateStateSettings;

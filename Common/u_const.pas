@@ -2282,7 +2282,7 @@ begin
   driveName3 := '';
   if (aDevice.DeviceNumber = APPL_ADV2) then
   begin
-    firmwareFolder := VERSION_FOLDER_ADV360;
+    firmwareFolder := VERSION_FOLDER_ADV2;
     driveName2 := ADV2_DRIVE_2;
     driveName3 := ADV2_DRIVE_3;
   end
@@ -2316,6 +2316,8 @@ begin
     begin
       aDevice.DriveLetter := driveLetter;
       aDevice.RootFolder := rootFolder;
+      if (aDevice.VDriveName <> UpperCase(driveName)) then
+         aDevice.VDriveName := UpperCase(driveName);
       aDevice.Connected := true;
       aDevice.ReadWriteAccess := DirectoryIsWritable(dirFirmware) and FileIsWritable(dirFirmware + firmwareFile);
       result := true;

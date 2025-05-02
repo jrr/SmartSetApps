@@ -18,9 +18,6 @@ inherited FormScanVDrive: TFormScanVDrive
     Width = 871
     ClientWidth = 871
     inherited lblTitle: TLabel
-      Left = 2
-      Height = 33
-      Top = 2
       Width = 867
       Caption = 'v-Drive not detected'
       Font.Height = -19
@@ -177,6 +174,22 @@ inherited FormScanVDrive: TFormScanVDrive
     Width = 832
     AutoSize = False
     Caption = 'Before launching the SmartSet App it is necessary to connect the keyboard’s v-Drive to your PC by using the onboard shortcut SmartSet + v-Drive. Please connect the v-Drive and then click the “Scan Again” button below.'
+    Font.Color = clWhite
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Layout = tlCenter
+    ParentColor = False
+    ParentFont = False
+    Visible = False
+    WordWrap = True
+  end
+  object lblAdv2Message: TLabel[10]
+    Left = 18
+    Height = 76
+    Top = 36
+    Width = 832
+    AutoSize = False
+    Caption = 'Before launching the SmartSet App it is necessary to connect the keyboard’s v-Drive to your PC by using the onboard shortcut Program + F1. Please connect the v-Drive and then click the “Scan Again” button below.'
     Font.Color = clWhite
     Font.Height = -19
     Font.Name = 'Tahoma'

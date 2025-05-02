@@ -95,6 +95,7 @@ type
     procedure AssignExpansion2Pack;
     procedure MirrorLightingToFnLayer;
     function GetStartupFileNo(aDevice: TDevice): string;
+    function GetStartupFileName(aDevice: TDevice): string;
     function GetFirmwareVersionInfo(aDevice: TDevice): TFirmwareInfo;
     function CheckReadWriteAccess(aDevice: TDevice): boolean;
     function UnzipFile(inputFile: string; outputPath: string): string;
@@ -1486,6 +1487,51 @@ begin
             else if  (Copy(currentLine, 1, length(Profile)) = Profile) then
             begin
               result := IntToStr(GetFileNumber(Copy(currentLine, length(Profile) + 2, length(currentLine))));
+            end;
+          end;
+        end;
+      end;
+    finally
+      if (fileContent <> nil) then
+        FreeAndNil(fileContent);
+    end;
+  end;
+end;
+
+function TFileService.GetStartupFileName(aDevice: TDevice): string;
+var
+  fileExists: boolean;
+  fileContent: TStringList;
+  i: integer;
+  currentLine: string;
+  sFilePath: string;
+  error: string;
+begin
+  result := '';
+  if (aDevice.Connected and (aDevice.RootFolder <> '')) then
+  begin
+    fileContent := nil;
+    try
+      sFilePath := IncludeTrailingBackslash(aDevice.RootFolder + aDevice.SettingsFolder) + aDevice.SettingsFile;
+      fileExists := CheckIfFileExists(sFilePath);
+      if (fileExists) then
+      begin
+        fileContent := TStringList.Create;
+        error := LoadFile(sFilePath, fileContent, false);
+
+        if error = '' then //no error
+        begin
+          for i:=0 to fileContent.Count - 1 do
+          begin
+            currentLine := AnsiLowerCase(fileContent.Strings[i]);
+
+            if (Copy(currentLine, 1, length(StartupFile)) = StartupFile) then
+            begin
+              result := ExtractFileName(Copy(currentLine, length(StartupFile) + 2, length(currentLine)));
+            end
+            else if  (Copy(currentLine, 1, length(Profile)) = Profile) then
+            begin
+              result := ExtractFileName(Copy(currentLine, length(Profile) + 2, length(currentLine)));
             end;
           end;
         end;

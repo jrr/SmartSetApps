@@ -39,6 +39,7 @@ type
     btnWatchTutorial6: TColorSpeedButtonCS;
     imgApp5: TImage;
     imgApp6: TImage;
+    imgAppLogoAdv2: TImage;
     imgEject1: TImage;
     imgClose: TImage;
     imgEject2: TImage;
@@ -180,7 +181,7 @@ var
   procedure SetVDriveState(state: boolean);
 
 const
-  MAX_DEVICES = 2;
+  MAX_DEVICES = 3;
   MM_MAX_NUMAXES = 16;
   NORMAL_HEIGHT = 830;
   NORMAL_WIDTH = 1550;
@@ -398,6 +399,17 @@ begin
   aDevice.Programmable := false;
   deviceList.Add(aDevice);
 
+  aDevice := TDevice.Create;
+  aDevice.DeviceName := 'ADVANTAGE 2';
+  aDevice.DeviceNumber := APPL_ADV2;
+  aDevice.VDriveName := ADV2_DRIVE;
+  aDevice.TutorialUrl := ADV2_TUTORIAL;
+  aDevice.VersionFolder := VERSION_FOLDER_ADV2;
+  aDevice.SettingsFolder := VERSION_FOLDER_ADV2;
+  aDevice.SettingsFile := ADV2_STATE_FILE;
+  aDevice.ScanVDriveHint := 'To program the keyboard, you must first connect the v-Drive to the PC using the shortcut Program + F1';
+  deviceList.Add(aDevice);
+
   //aDevice := TDevice.Create;
   //aDevice.DeviceName := 'FREESTYLE PRO';
   //aDevice.DeviceNumber := APPL_FSPRO;
@@ -415,16 +427,7 @@ begin
   ////tpdp aDevice.ScanVDriveHint := 'To program the keyboard, you must first connect the v-Drive to the PC using the shortcut SmartSet + Right Shift + V';
   //deviceList.Add(aDevice);
   //
-  //aDevice := TDevice.Create;
-  //aDevice.DeviceName := 'ADVANTAGE 2';
-  //aDevice.DeviceNumber := APPL_ADV2;
-  //aDevice.VDriveName := ADV2_DRIVE;
-  //aDevice.TutorialUrl := ADV2_TUTORIAL;
-  //aDevice.VersionFolder := VERSION_FOLDER_ADV2;
-  //aDevice.SettingsFolder := VERSION_FOLDER_ADV2;
-  //aDevice.SettingsFile := ADV2_STATE_FILE;
-  ////todo aDevice.ScanVDriveHint := 'To program the keyboard, you must first connect the v-Drive to the PC using the shortcut SmartSet + F8';
-  //deviceList.Add(aDevice);
+
 end;
 
 procedure TFormDashboard.UpdateDevices;
@@ -523,7 +526,10 @@ begin
           appConnLabel.Caption := CONN_TEXT;
           appConnLabel.Font.Color := CONN_COLOR;
           appOpenBtn.Caption := 'Configure';
-          appProfileLabel.Caption := 'Profile ' + fileService.GetStartupFileNo(aDevice);
+          if (aDevice.DeviceNumber = APPL_ADV2) then
+            appProfileLabel.Caption := 'Layout ' + fileService.GetStartupFileName(aDevice)
+          else
+            appProfileLabel.Caption := 'Profile ' + fileService.GetStartupFileNo(aDevice);
           {$ifdef Win32}
           appEjectBtn.Visible := true;
           {$endif};
@@ -874,7 +880,7 @@ begin
         if (FormMainAdv2.InitForm(self)) then
            FormMainAdv2.Show;
         lblDemoMode.Visible := GDemoMode;
-        imgAppLogoFsPro.Visible := true;
+        imgAppLogoAdv2.Visible := true;
       finally
         CloseLoading;
       end;
@@ -1021,6 +1027,7 @@ begin
     //Hide logos
     imgAppLogoAdv360.Visible := false;
     imgAppLogoFsPro.Visible := false;
+    imgAppLogoAdv2.Visible := false;
 
     SetSelectedMenu(lblHome);
     lblDemoMode.Visible := false;

@@ -18,6 +18,7 @@ type
     btnScan: TColorSpeedButtonCS;
     lblFSMessage: TLabel;
     lblAdv360Message: TLabel;
+    lblAdv2Message: TLabel;
     lblTKOMessage: TLabel;
     lblRGBMessage: TLabel;
     procedure btnScanClick(Sender: TObject);
@@ -59,7 +60,7 @@ begin
   else if (device.DeviceNumber = APPL_FSPRO) or (device.DeviceNumber = APPL_FSEDGE) then
     FormScanVDrive.lblFSMessage.Visible := true
   else if (device.DeviceNumber = APPL_ADV2) then
-    FormScanVDrive.lblFSMessage.Visible := true
+    FormScanVDrive.lblAdv2Message.Visible := true
   else if (device.DeviceNumber = APPL_ADV360) then
     FormScanVDrive.lblAdv360Message.Visible := true;
 

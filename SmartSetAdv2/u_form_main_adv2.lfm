@@ -1,12 +1,11 @@
 object FormMainAdv2: TFormMainAdv2
-  Left = 1057
+  Left = 266
   Height = 711
-  Top = 478
+  Top = 201
   Width = 1100
   ClientHeight = 711
   ClientWidth = 1100
   Color = clWhite
-  DesignTimePPI = 168
   Font.CharSet = ANSI_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
@@ -22,7 +21,7 @@ object FormMainAdv2: TFormMainAdv2
   OnShow = FormShow
   OnWindowStateChange = FormWindowStateChange
   Position = poScreenCenter
-  LCLVersion = '2.0.8.0'
+  LCLVersion = '2.0.12.0'
   Scaled = False
   object pnlMain: TPanel
     Left = 0
@@ -122,16 +121,13 @@ object FormMainAdv2: TFormMainAdv2
         ParentColor = False
         ParentFont = False
         ParentShowHint = False
-        Position = 0
         ProgressColor = 13529600
         ProgressColor2 = 13529600
         ProgressMarkSize = 2
-        ProgressMiddlePos = 0
         RelativeScaleLength = -1
         Scale.DateTimeFormat = 'hh:nn:ss'
         Scale.LogarithmBase = 10
         Scale.Max = 9
-        Scale.Min = 0
         Scale.TickLength = 5
         Scale.TickLongValue = 5
         Scale.TickMiddleValue = 5
@@ -211,16 +207,13 @@ object FormMainAdv2: TFormMainAdv2
         ParentColor = False
         ParentFont = False
         ParentShowHint = False
-        Position = 0
         ProgressColor = 13529600
         ProgressColor2 = 13529600
         ProgressMarkSize = 2
-        ProgressMiddlePos = 0
         RelativeScaleLength = -1
         Scale.DateTimeFormat = 'hh:nn:ss'
         Scale.LogarithmBase = 10
         Scale.Max = 4
-        Scale.Min = 0
         Scale.TickLength = 5
         Scale.TickLongValue = 5
         Scale.TickMiddleValue = 5
@@ -5748,16 +5741,13 @@ object FormMainAdv2: TFormMainAdv2
               PageSize = 10
               ParentColor = False
               ParentFont = False
-              Position = 0
               ProgressColor = 14064162
               ProgressColor2 = 14064162
               ProgressMarkSize = 2
-              ProgressMiddlePos = 0
               RelativeScaleLength = -1
               Scale.DateTimeFormat = 'hh:nn:ss'
               Scale.LogarithmBase = 10
               Scale.Max = 9
-              Scale.Min = 0
               Scale.TickLength = 5
               Scale.TickLongValue = 5
               Scale.TickMiddleValue = 5
@@ -6501,8 +6491,8 @@ object FormMainAdv2: TFormMainAdv2
   end
   object pmTokensKeys: TPopupMenu
     OnPopup = pmTokensKeysPopup
-    left = 328
-    top = 56
+    Left = 328
+    Top = 56
     object mnuTools: TMenuItem
       Caption = 'Tools'
       object miMenu: TMenuItem
@@ -6648,8 +6638,8 @@ object FormMainAdv2: TFormMainAdv2
   end
   object pmTokensMacros: TPopupMenu
     OnPopup = pmTokensMacrosPopup
-    left = 240
-    top = 56
+    Left = 240
+    Top = 56
     object mnuToolsMacro: TMenuItem
       Caption = 'Tools'
       object miMenuM: TMenuItem
@@ -6843,19 +6833,19 @@ object FormMainAdv2: TFormMainAdv2
   object OpenDialog: TOpenDialog
     Filter = 'Text files|*.txt'
     Options = [ofFileMustExist, ofEnableSizing, ofViewDetail]
-    left = 800
-    top = 40
+    Left = 800
+    Top = 40
   end
   object SaveDialog: TSaveDialog
     Filter = 'Text files|*.txt'
     Options = [ofOverwritePrompt, ofPathMustExist, ofEnableSizing, ofViewDetail]
-    left = 880
-    top = 40
+    Left = 880
+    Top = 40
   end
   object imageList: TImageList
     DrawingStyle = dsTransparent
-    left = 464
-    top = 56
+    Left = 464
+    Top = 56
     Bitmap = {
       4C690A0000001000000010000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -7184,13 +7174,13 @@ object FormMainAdv2: TFormMainAdv2
     Enabled = False
     Interval = 30000
     OnTimer = CheckVDriveTmrTimer
-    left = 696
-    top = 32
+    Left = 696
+    Top = 32
   end
   object tmrAfterFormShown: TTimer
     Enabled = False
     Interval = 500
     OnTimer = tmrAfterFormShownTimer
-    left = 744
+    Left = 744
   end
 end
